@@ -1,5 +1,5 @@
 /*:
-[TOC](Table%20Of%20Contents) | [Previous](@previous)
+[TOC](Table%20Of%20Contents) | [Previous](@previous) | [Next](@next)
 
 ---
 

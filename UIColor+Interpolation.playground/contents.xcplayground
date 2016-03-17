@@ -4,5 +4,6 @@
         <page name='Table Of Contents'/>
         <page name='Basic Usage'/>
         <page name='Scroll View'/>
+        <page name='Collection View'/>
     </pages>
 </playground>
