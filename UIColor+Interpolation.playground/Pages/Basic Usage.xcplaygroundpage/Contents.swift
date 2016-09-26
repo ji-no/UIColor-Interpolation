@@ -16,5 +16,5 @@ let color2 = #colorLiteral(red: 1, green: 0.7215686274509804, blue: 0.1098039215
 3. Click the result and scroll through its history
 */
 for i in stride(from: 0, to: 1, by: 0.1) {
-    UIColor.interpolate(from: color1, to: color2, withProgress: CGFloat(i))
+    UIColor.interpolate(from: color1, to: color2, with: CGFloat(i))
 }

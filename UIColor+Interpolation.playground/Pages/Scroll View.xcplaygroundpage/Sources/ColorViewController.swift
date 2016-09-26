@@ -51,6 +51,6 @@ extension ColorViewController: UIScrollViewDelegate {
         let offsetForCurrentPage = pageWidth * CGFloat(currentPage)
         let progress = 1 - ((offsetForCurrentPage - offset.x) / pageWidth)
 
-        view.backgroundColor = UIColor.interpolate(from: startColor, to: endColor, withProgress: progress)
+        view.backgroundColor = UIColor.interpolate(from: startColor, to: endColor, with: progress)
     }
 }

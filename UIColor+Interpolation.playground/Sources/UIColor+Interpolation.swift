@@ -22,7 +22,7 @@ public extension UIColor {
 
      - Returns: The interpolated `UIColor` for the given progress point
      */
-    static func interpolate(from fromColor: UIColor, to toColor: UIColor, withProgress progress: CGFloat) -> UIColor {
+    static func interpolate(from fromColor: UIColor, to toColor: UIColor, with progress: CGFloat) -> UIColor {
         let fromComponents = fromColor.components
         let toComponents = toColor.components
 
