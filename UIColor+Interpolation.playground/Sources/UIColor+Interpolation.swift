@@ -8,9 +8,9 @@ import UIKit
 public extension UIColor {
     /// The RGBA components associated with a `UIColor` instance.
     var components: (r: CGFloat, g: CGFloat, b: CGFloat, a: CGFloat) {
-        let components = CGColorGetComponents(self.CGColor)
+        let components = self.cgColor.components
 
-        return (r: components[0], g: components[1], b: components[2], a: components[3])
+        return (r: components![0], g: components![1], b: components![2], a: components![3])
     }
 
     /**
@@ -19,10 +19,10 @@ public extension UIColor {
      - Parameter fromColor: The `UIColor` to interpolate from
      - Parameter toColor:   The `UIColor` to interpolate to (e.g. when fully interpolated)
      - Parameter progress:  The interpolation progess; must be a `CGFloat` from 0 to 1
-     
+
      - Returns: The interpolated `UIColor` for the given progress point
      */
-    static func interpolateFrom(fromColor: UIColor, to toColor: UIColor, withProgress progress: CGFloat) -> UIColor {
+    static func interpolate(from fromColor: UIColor, to toColor: UIColor, withProgress progress: CGFloat) -> UIColor {
         let fromComponents = fromColor.components
         let toComponents = toColor.components
 

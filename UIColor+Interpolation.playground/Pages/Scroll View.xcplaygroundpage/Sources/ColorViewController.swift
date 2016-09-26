@@ -11,7 +11,7 @@ public class ColorViewController: UIViewController {
         view.backgroundColor = colors.first
     }
 
-    override public func viewDidAppear(animated: Bool) {
+    override public func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
 
         configureScrollView()
@@ -19,8 +19,9 @@ public class ColorViewController: UIViewController {
 
     private func configureScrollView() {
         let scrollView = UIScrollView(frame: view.frame)
-        scrollView.contentSize = CGSizeMake(view.frame.width * CGFloat(colors.count), 0)
-        scrollView.pagingEnabled = true
+        let contentWidth = view.frame.width * CGFloat(colors.count)
+        scrollView.contentSize = CGSize(width: contentWidth, height: 0)
+        scrollView.isPagingEnabled = true
         scrollView.delegate = self
 
         view.addSubview(scrollView)
@@ -30,7 +31,7 @@ public class ColorViewController: UIViewController {
 // MARK: - UIScrollViewDelegate
 
 extension ColorViewController: UIScrollViewDelegate {
-    public func scrollViewDidScroll(scrollView: UIScrollView) {
+    public func scrollViewDidScroll(_ scrollView: UIScrollView) {
         interpolateBackgroundColor(forContentOffset: scrollView.contentOffset)
     }
 
@@ -50,6 +51,6 @@ extension ColorViewController: UIScrollViewDelegate {
         let offsetForCurrentPage = pageWidth * CGFloat(currentPage)
         let progress = 1 - ((offsetForCurrentPage - offset.x) / pageWidth)
 
-        view.backgroundColor = UIColor.interpolateFrom(startColor, to: endColor, withProgress: progress)
+        view.backgroundColor = UIColor.interpolate(from: startColor, to: endColor, withProgress: progress)
     }
 }
