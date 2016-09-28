@@ -8,9 +8,9 @@ import UIKit
 public extension UIColor {
     /// The RGBA components associated with a `UIColor` instance.
     var components: (r: CGFloat, g: CGFloat, b: CGFloat, a: CGFloat) {
-        let components = self.cgColor.components
+        let components = self.cgColor.components!
 
-        return (r: components![0], g: components![1], b: components![2], a: components![3])
+        return (r: components[0], g: components[1], b: components[2], a: components[3])
     }
 
     /**
