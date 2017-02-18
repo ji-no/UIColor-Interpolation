@@ -10,7 +10,10 @@ public extension UIColor {
     var components: (r: CGFloat, g: CGFloat, b: CGFloat, a: CGFloat) {
         let components = self.cgColor.components!
 
-        return (r: components[0], g: components[1], b: components[2], a: components[3])
+        switch components.count == 2 {
+        case true : return (r: components[0], g: components[0], b: components[0], a: components[1])
+        case false: return (r: components[0], g: components[1], b: components[2], a: components[3])
+        }
     }
 
     /**
